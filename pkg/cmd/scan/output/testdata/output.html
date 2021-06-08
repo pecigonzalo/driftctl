@@ -4,9 +4,9 @@
     <title>Driftctl scan report</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
-
-/* http://meyerweb.com/eric/tools/css/reset/
+    <link rel="shortcut icon"
+          href="https://raw.githubusercontent.com/cloudskiff/driftctl-docs/main/static/img/favicon.ico"/>
+    <style>/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -26,7 +26,6 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
 }
@@ -51,7 +50,6 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
     content: none;
 }
 
@@ -68,7 +66,7 @@ table {
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "Helvetica", sans-serif;
     color: #1C1E21;
     background-color: #F7F7F9;
     padding-bottom: 50px;
@@ -133,6 +131,26 @@ div.container {
     margin-bottom: 10px;
 }
 
+.pa-1 {
+    padding: 10px;
+}
+
+.pl-1 {
+    padding-left: 10px;
+}
+
+.pr-1 {
+    padding-right: 10px;
+}
+
+.pt-1 {
+    padding-top: 10px;
+}
+
+.pb-1 {
+    padding-bottom: 10px;
+}
+
 input[type="text"],
 select {
     padding: 8px;
@@ -164,14 +182,18 @@ h2 {
 }
 
 .heading-title {
-    margin-bottom: 10px;
+    display: block;
+}
+.heading-subtitle {
+    font-size: 14px;
+    display: block;
 }
 
 .app-content {
     padding: 25px;
     border-top: 3px solid #71B2C3;
     background-color: #ffffff;
-    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 5px #0000000a;
 }
 
 .resource-item {
@@ -179,6 +201,8 @@ h2 {
     padding: 10px;
     margin-top: 10px;
     color: #6e7071;
+    border-radius: 2px;
+    font-size: 14px;
 }
 
 .resource-item:hover {
@@ -187,6 +211,18 @@ h2 {
 
 .text--bold {
     font-weight: bold;
+}
+
+.text--grey {
+    color: #747578;
+}
+
+.card {
+    padding: 15px;
+    font-size: 15px;
+    background: #ffffff;
+    box-shadow: 0 0 5px #0000000a;
+    border-radius: 3px;
 }
 
 .reset-filter-btn {
@@ -213,6 +249,7 @@ h2 {
     display: inline-block;
     color: #747578;
     transition: background-color 200ms;
+    border-radius: 3px;
 }
 
 .tab:hover {
@@ -258,9 +295,8 @@ h2 {
 #two:checked ~ .tabs #two-tab,
 #three:checked ~ .tabs #three-tab,
 #four:checked ~ .tabs #four-tab {
-    background: transparent;
-    color: #747578;
-    border-bottom: 2px solid #71b2c3;
+    background: #71b2c3;
+    color: #ffffff;
 }
 
 .empty-message-container {
@@ -271,10 +307,16 @@ h2 {
 <div class="container">
     <div class="heading d-flex justify-space-between align-center">
         <div>
-            <h1 class="heading-title">Driftctl scan report</h1>
-            <span class="heading-subtitle">Coverage 15%</span>
+            <h1 class="heading-title mb-1">Driftctl scan report</h1>
+            <span class="heading-subtitle">Coverage 15% - Scan duration 0s</span>
         </div>
-        <h2 class="heading-date">Jun 07, 2021</h2>
+        <h2 class="heading-date">Jun 08, 2021</h2>
+    </div>
+    <div class="card d-flex justify-space-around mb-2 text--grey">
+        <span>Total resources: 13</span>
+        <span>Changed: 15%</span>
+        <span>Unmanaged: 38%</span>
+        <span>Missing: 46%</span>
     </div>
     <div class="app-content">
         
@@ -321,36 +363,44 @@ h2 {
             <div class="panels">
                 
                 <div class="panel" id="one-panel">
+                    <div class="d-flex justify-space-between text--grey pa-1">
+                        <span>Resource id</span>
+                        <span>Resource type</span>
+                    </div>
                     
                     <div class="resource-item resource-item-unmanaged d-flex justify-space-between">
                         <span class="resource-item-id">unmanaged-id-1</span>
-                        <span class="resource-item-type text--bold">aws_unmanaged_resource</span>
+                        <span class="resource-item-type">aws_unmanaged_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-unmanaged d-flex justify-space-between">
                         <span class="resource-item-id">unmanaged-id-2</span>
-                        <span class="resource-item-type text--bold">aws_unmanaged_resource</span>
+                        <span class="resource-item-type">aws_unmanaged_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-unmanaged d-flex justify-space-between">
                         <span class="resource-item-id">unmanaged-id-3</span>
-                        <span class="resource-item-type text--bold">aws_unmanaged_resource</span>
+                        <span class="resource-item-type">aws_unmanaged_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-unmanaged d-flex justify-space-between">
                         <span class="resource-item-id">unmanaged-id-4</span>
-                        <span class="resource-item-type text--bold">aws_unmanaged_resource</span>
+                        <span class="resource-item-type">aws_unmanaged_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-unmanaged d-flex justify-space-between">
                         <span class="resource-item-id">unmanaged-id-5</span>
-                        <span class="resource-item-type text--bold">aws_unmanaged_resource</span>
+                        <span class="resource-item-type">aws_unmanaged_resource</span>
                     </div>
                     
                 </div>
                 
                 
                 <div class="panel" id="two-panel">
+                    <div class="d-flex justify-space-between text--grey pa-1">
+                        <span>Resource id</span>
+                        <span>Resource type</span>
+                    </div>
                     
                     <div class="resource-item resource-item-changed d-flex justify-space-between">
                         <span class="resource-item-id">diff-id-1</span>
@@ -363,7 +413,7 @@ h2 {
                             <div>- a: &#34;oldValue&#34; =&gt; &lt;nil&gt; </div>
                             
                         </div>
-                        <span class="resource-item-type text--bold">aws_diff_resource</span>
+                        <span class="resource-item-type">aws_diff_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-changed d-flex justify-space-between">
@@ -373,42 +423,46 @@ h2 {
                             <div>- path.to.field: &lt;nil&gt; =&gt; [&#34;value&#34;] </div>
                             
                         </div>
-                        <span class="resource-item-type text--bold">aws_diff_resource</span>
+                        <span class="resource-item-type">aws_diff_resource</span>
                     </div>
                     
                 </div>
                 
                 
                 <div class="panel" id="three-panel">
+                    <div class="d-flex justify-space-between text--grey pa-1">
+                        <span>Resource id</span>
+                        <span>Resource type</span>
+                    </div>
                     
                     <div class="resource-item resource-item-deleted d-flex justify-space-between">
                         <span class="resource-item-id">deleted-id-1</span>
-                        <span class="resource-item-type text--bold">aws_deleted_resource</span>
+                        <span class="resource-item-type">aws_deleted_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-deleted d-flex justify-space-between">
                         <span class="resource-item-id">deleted-id-2</span>
-                        <span class="resource-item-type text--bold">aws_deleted_resource</span>
+                        <span class="resource-item-type">aws_deleted_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-deleted d-flex justify-space-between">
                         <span class="resource-item-id">deleted-id-3</span>
-                        <span class="resource-item-type text--bold">aws_deleted_resource</span>
+                        <span class="resource-item-type">aws_deleted_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-deleted d-flex justify-space-between">
                         <span class="resource-item-id">deleted-id-4</span>
-                        <span class="resource-item-type text--bold">aws_deleted_resource</span>
+                        <span class="resource-item-type">aws_deleted_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-deleted d-flex justify-space-between">
                         <span class="resource-item-id">deleted-id-5</span>
-                        <span class="resource-item-type text--bold">aws_deleted_resource</span>
+                        <span class="resource-item-type">aws_deleted_resource</span>
                     </div>
                     
                     <div class="resource-item resource-item-deleted d-flex justify-space-between">
                         <span class="resource-item-id">deleted-id-6</span>
-                        <span class="resource-item-type text--bold">aws_deleted_resource</span>
+                        <span class="resource-item-type">aws_deleted_resource</span>
                     </div>
                     
                 </div>
@@ -418,18 +472,18 @@ h2 {
                     
                     
                     <div class="resource-item resource-item-alerts">
-                        <span class="resource-item-type text--bold"></span>
-                        <span>- Ignoring aws_vpc from drift calculation: Listing aws_vpc is forbidden.</span>
+                        <span class="resource-item-type"></span>
+                        <span>Ignoring aws_vpc from drift calculation: Listing aws_vpc is forbidden.</span>
                     </div>
                     
                     <div class="resource-item resource-item-alerts">
-                        <span class="resource-item-type text--bold"></span>
-                        <span>- Ignoring aws_sqs from drift calculation: Listing aws_sqs is forbidden.</span>
+                        <span class="resource-item-type"></span>
+                        <span>Ignoring aws_sqs from drift calculation: Listing aws_sqs is forbidden.</span>
                     </div>
                     
                     <div class="resource-item resource-item-alerts">
-                        <span class="resource-item-type text--bold"></span>
-                        <span>- Ignoring aws_sns from drift calculation: Listing aws_sns is forbidden.</span>
+                        <span class="resource-item-type"></span>
+                        <span>Ignoring aws_sns from drift calculation: Listing aws_sns is forbidden.</span>
                     </div>
                     
                     
