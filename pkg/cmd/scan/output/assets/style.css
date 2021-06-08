@@ -144,6 +144,7 @@ select:focus {
 
 input[name="resource-id-filter"], select[name="resource-type-filter"] {
     width: 300px;
+    border-radius: 3px;
 }
 
 h1 {
